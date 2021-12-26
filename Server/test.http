@@ -1,0 +1,114 @@
+//register
+POST http://localhost:8800/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Lana",
+  "email": "lana@mail.ru",
+  "password": "123456"
+}
+
+###
+//login
+POST http://localhost:8800/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "peaasdter111@mail.ru",
+  "password": "123456"
+}
+
+
+###
+//update user
+PUT http://localhost:8800/api/users/61c6f22e62d53c0358474826
+Content-Type: application/json
+
+{
+  "desc": "updated description",
+  "userId" : "61c6f22e62d53c0358474826",
+  "password" : "qwerty"
+}
+
+###
+//delete user
+DELETE http://localhost:8800/api/users/61c6f22e62d53c0358474826
+Content-Type: application/json
+
+{
+  "userId" : "61c6f22e62d53c0358474826"
+}
+###
+//find user
+GET http://localhost:8800/api/users/61c6f7737ebc32fa70d6f2e1
+Content-Type: application/json
+
+{
+  "userId" : "61c6f7737ebc32fa70d6f2e1"
+}
+###
+//follow user
+PUT http://localhost:8800/api/users/61c6ff6e393c7804e7ea50e4/follow
+Content-Type: application/json
+
+{
+"userId" : "61c6ff81393c7804e7ea50e6"
+}
+###
+//unfollow user
+PUT http://localhost:8800/api/users/61c6ff6e393c7804e7ea50e4/unfollow
+Content-Type: application/json
+
+{
+  "userId" : "61c6ff81393c7804e7ea50e6"
+}
+###
+//post add
+POST http://localhost:8800/api/posts
+Content-Type: application/json
+
+{
+  "userId" : "61c8c9b878362b05fe261f7c",
+  "desc": "its my new post from lana"
+}
+###
+//post update
+PUT http://localhost:8800/api/posts/61c8cee11d0df1ba94583c84
+Content-Type: application/json
+
+{
+  "userId" : "61c8c9b878362b05fe261f7c",
+  "desc": "its my first post using update"
+}
+###
+//post delete
+DELETE http://localhost:8800/api/posts/61c8ca0a78362b05fe261f7e
+Content-Type: application/json
+
+{
+  "userId" : "61c8c9b878362b05fe261f7c"
+}
+###
+//like and dislike a post
+PUT http://localhost:8800/api/posts/61c8d6dd3652872322f34b3d/like
+Content-Type: application/json
+
+{
+  "userId" : "61c6ff6e393c7804e7ea50e4"
+}
+###
+//get a post
+GET http://localhost:8800/api/posts/61c8c7fe78362b05fe261f7a
+Content-Type: application/json
+
+{
+  "userId" : "61c6ff81393c7804e7ea50e6"
+}
+###
+//timeline posts
+GET http://localhost:8800/api/posts/timeline/all
+Content-Type: application/json
+
+{
+  "userId" : "61c6ff81393c7804e7ea50e6"
+}
